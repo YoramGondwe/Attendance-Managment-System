@@ -8,7 +8,7 @@ class BootStrap {
         def headMaster = SecRole.findByAuthority('ROLE_HEAD') ?: new SecRole(authority: 'ROLE_HEAD').save(failOnError: true)
         def Teacher = SecRole.findByAuthority('ROLE_TEACHER') ?: new SecRole(authority: 'ROLE_TEACHER').save(failOnError: true)
 
-        def adminUser = SecUser.findByUsername('admin') ?: new SecUser(
+            def adminUser = SecUser.findByUsername('admin') ?: new SecUser(
                 firstName: 'Joshua',
                 lastName: 'Amatende',
                 gender: 'M',

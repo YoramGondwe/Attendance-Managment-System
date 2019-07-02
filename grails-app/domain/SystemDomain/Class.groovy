@@ -2,11 +2,11 @@ package SystemDomain
 
 class Class {
     Long id
-    String name
+    String code
     String grade
     static constraints = {
         id generator: 'increment'
-        name nullable: false, blank: false
+        code  nullable: false, blank: false
         grade nullable: false, blank: false
 
     }

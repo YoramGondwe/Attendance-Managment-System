@@ -1,9 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: yoram
-  Date: 6/26/19
-  Time: 6:42 PM
---%>
 
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>

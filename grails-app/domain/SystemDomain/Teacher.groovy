@@ -2,6 +2,7 @@ package SystemDomain
 
 class Teacher {
     Long id
+    String staffId
     String firstName
     String lastName
     String email

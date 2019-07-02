@@ -10,10 +10,6 @@ import grails.compiler.GrailsCompileStatic
 class SecUser implements Serializable {
 
     private static final long serialVersionUID = 1
-    String firstName
-    String lastName
-    String gender
-    String email
     String username
     String password
     boolean enabled = true
@@ -26,9 +22,6 @@ class SecUser implements Serializable {
     }
 
     static constraints = {
-        firstName nullable: false,blank: false
-        lastName nullable: false,blank: false
-        email nullable: true, blank: true
         password nullable: false, blank: false, password: true
         username nullable: false, blank: false, unique: true
     }

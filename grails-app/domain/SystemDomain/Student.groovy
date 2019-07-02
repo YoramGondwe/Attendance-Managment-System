@@ -3,6 +3,13 @@ package SystemDomain
 class Student {
     String firstName
     String lastName
+    String studentId
+    String yearRegistered
+    String dateOfBirth
+    String nationality
+    String otherNames
+    String email
+    Integer phone
     String gender
     String grade_id
     String class_id
