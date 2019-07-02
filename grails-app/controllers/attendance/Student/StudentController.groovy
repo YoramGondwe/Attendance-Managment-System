@@ -6,6 +6,6 @@ class StudentController {
 
     def index() {
         def student = Student.findAll()
-        render(view: '',model: [students:student])
+        render(view: '/student/student',model: [students:student])
     }
 }

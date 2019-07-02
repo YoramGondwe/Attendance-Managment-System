@@ -16,16 +16,19 @@ class AddStudentController {
         String nationality = params?.nationality
         String otherNames = params?.otherNames
         String email = params?.email
-        Integer phone = params?.phone
+        Integer phone = Integer.parseInt(params?.phone)
         String gender = params?.gender
         String grade_id = params?.grade
         String class_id = params?.classId
 
-        def acro = School_Info.last().acronym
-
+//        def acro = School_Info.last().acronym
+        def acro = 'CHS'
         Random random = new Random();
         String id = String.format("%06d", random.nextInt(10000))
         def studentId = acro.toUpperCase() + id
+
+        println "pass ${id} StId:${studentId}"
+
         new Student(
                 studentId: studentId,
                 firstName: firstName,
@@ -44,7 +47,7 @@ class AddStudentController {
 
         def roles = SecRole.findByAuthority('ROLE_USER') ?: new SecRole(authority: 'ROLE_USER').save(failOnError: true)
 
-        def school = SecUser.findByUsername(username) ?: new SecUser(
+        def school = SecUser.findByUsername(studentId) ?: new SecUser(
                 username: studentId,
                 password: id,
 
@@ -56,7 +59,9 @@ class AddStudentController {
                     user: school,
                     role: roles
             ).save(flush: true, failOnError: true)
-            flash.message = "Successfully registered $username"
+
         }
+        flash.message = "Successfully registered $studentId"
+        redirect(controller:'student',action:'index')
     }
 }

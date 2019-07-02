@@ -24,6 +24,8 @@ class UrlMappings {
 
         }
         group '/student',{
+            '/student'(controller:'student',action:'index')
+            '/addStudent'(controller:'addStudent',action:'addStudent')
 
         }
         group '/teacher',{

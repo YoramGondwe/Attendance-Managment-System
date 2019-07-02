@@ -13,9 +13,8 @@ class Student {
     String gender
     String grade_id
     String class_id
-    Long id
+
     static constraints = {
-        id generator: 'increment'
         firstName nullable: false, blank: false
         lastName nullable: false, blank: false
         gender nullable: true, blank: true

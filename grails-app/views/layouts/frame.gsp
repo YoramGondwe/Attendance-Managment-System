@@ -263,18 +263,18 @@
                             <li class="navigation-header"><span>Main</span> <i class="icon-menu" title="Main pages"></i></li>
                             <li class="active"><a href="index.html"><i class="icon-home4"></i> <span>Dashboard</span></a></li>
                             <li>
-                                <a href="#"><i class="icon-droplet2"></i> <span>Sales</span></a>
+                                <a href="#"><i class="icon-droplet2"></i> <span>Settings</span></a>
                                 <ul>
-                                    <li><a href="colors_primary.html">Primary palette</a></li>
-                                    <li><a href="colors_danger.html">Danger palette</a></li>
-                                    <li><a href="colors_success.html">Success palette</a></li>
-                                    <li><a href="colors_warning.html">Warning palette</a></li>
+                                    <li><a href="${createLink(url: '/student/student')}">Students</a></li>
+                                    <li><a href="colors_danger.html">Teachers</a></li>
+                                    <li><a href="colors_success.html">Grades</a></li>
+                                    <li><a href="${createLink(url: '/settings/classes')}">Classes</a></li>
 
                                 </ul>
                             </li>
 
                             <li>
-                                <a href="#"><i class="icon-graph"></i> <span>Purchases</span></a>
+                                <a href="#"><i class="icon-graph"></i> <span>Reports</span></a>
                                 <ul>
                                     <li><a href="echarts_lines_areas.html">Lines and areas</a></li>
                                     <li><a href="echarts_columns_waterfalls.html">Columns and waterfalls</a></li>

@@ -22,7 +22,7 @@
         <p>List Classes</p>
     </div>
 <!-- Basic layout-->
-    <g:form url="[action:'addClass',controller:'addClass']" class="form-horizontal" style='margin-top: -27px;'>
+    <g:form url="[action:'addStudent',controller:'addStudent']" class="form-horizontal" style='margin-top: -27px;'>
         <div class="col-md-6">
             <div class="panel panel-flat" >
                 <div class="panel-body">
@@ -30,6 +30,9 @@
 
                         <thead>
                         <tr>
+                            <th>FirstName</th>
+                            <th>LastName</th>
+                            <th>Gender</th>
                             <th>Grade</th>
                             <th>Code</th>
                             <th>Action</th>
@@ -37,13 +40,16 @@
                         </thead>
                         <tbody>
 
-                        <g:if test="${classy != null}">
-                            <input type="hidden" name="id"  value="${classy.id}"/>
+                        <g:if test="${students != null}">
+                            <input type="hidden" name="id"  value="${students.id}"/>
                             <div id="towns">
-                                <g:each var="prov" in="${classy}">
+                                <g:each var="prov" in="${students}">
                                     <tr >
-                                        <td  >${prov.grade}</td>
-                                        <td  >${prov.code}</td>
+                                        <td  >${prov.firstName}</td>
+                                        <td  >${prov.lastName}</td>
+                                        <td  >${prov.gender}</td>
+                                        <td  >${prov.grade_id}</td>
+                                        <td  >${prov.class_id}</td>
                                         <td class="text-center">
                                             <ul class="icons-list">
                                                 <li class="dropdown">
@@ -74,11 +80,29 @@
         <div class="col-md-6">
             <div class="panel panel-flat">
                 <div class="panel-body">
-                    <h5>New Class</h5><hr /><br />
+                    <h5>New Student</h5><hr /><br />
                     <div class="form-group">
-                        <label class="col-lg-4 control-label" id="label-1">Code:</label>
+                        <label class="col-lg-4 control-label" id="label-1">FirstName:</label>
                         <div class="col-lg-6">
-                            <input type="text" name="code" class="form-control" required >
+                            <input type="text" name="firstName" class="form-control" required >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-4 control-label" id="label-1">LastName:</label>
+                        <div class="col-lg-6">
+                            <input type="text" name="lastName" class="form-control" required >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-4 control-label" id="label-1">OtherNames:</label>
+                        <div class="col-lg-6">
+                            <input type="text" name="otherNames" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-4 control-label" id="label-1">Gender:</label>
+                        <div class="col-lg-6">
+                            <input type="text" name="gender" class="form-control">
                         </div>
                     </div>
                     <div class="form-group">
@@ -87,6 +111,43 @@
                             <input type="text" name="grade" class="form-control">
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label class="col-lg-4 control-label" id="label-1">Class:</label>
+                        <div class="col-lg-6">
+                            <input type="text" name="classId" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-4 control-label" id="label-1">Year Registered:</label>
+                        <div class="col-lg-6">
+                            <input type="text" name="yearRegistered" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-4 control-label" id="label-1">Date of Birth:</label>
+                        <div class="col-lg-6">
+                            <input type="date" name="dob" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-4 control-label" id="label-1">Nationality:</label>
+                        <div class="col-lg-6">
+                            <input type="text" name="nationality" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-4 control-label" id="label-1">Email:</label>
+                        <div class="col-lg-6">
+                            <input type="text" name="email" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-4 control-label" id="label-1">Phone:</label>
+                        <div class="col-lg-6">
+                            <input type="number" name="phone" class="form-control">
+                        </div>
+                    </div>
+
                     <div class="text-right" style="margin-top:5px;margin-bottom:5px;margin-right:20px;">
                         <!--<button type="submit" class="btn btn-defoult btn-xs">Add New <i class="icon-new-tab position-left"></i></button>-->
                         <!--<button type="submit" class="btn btn-info btn-xs">Edit <i class="icon-pencil4 position-left"></i></button>-->

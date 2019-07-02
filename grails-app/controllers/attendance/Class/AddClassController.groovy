@@ -6,11 +6,11 @@ class AddClassController {
 
     def addClass() {
 
-        String name = params.get('name')
-        String grade = params?.name
+        String name = params?.code
+        String grade = params?.grade
 
         new Class(
-                name: name,
+              code: name,
                 grade: grade
         ).save(flush:true,failOnError:true)
 
