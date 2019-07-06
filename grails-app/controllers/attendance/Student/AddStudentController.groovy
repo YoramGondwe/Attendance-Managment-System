@@ -56,8 +56,8 @@ class AddStudentController {
 
         if (!school.authorities.contains(roles)) {
             new SecUserSecRole(
-                    user: school,
-                    role: roles
+                    secUser: school,
+                    secRole: roles
             ).save(flush: true, failOnError: true)
 
         }

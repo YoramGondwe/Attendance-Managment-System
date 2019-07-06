@@ -21,6 +21,7 @@ grails.plugin.springsecurity.interceptUrlMap = [
 
 	[pattern: '/settings/**', access: ['permitAll']],
 	[pattern: '/student/**', access: ['permitAll']],
+	[pattern: '/logout', access: ['permitAll']],
 ]
 
 grails.plugin.springsecurity.filterChain.chainMap = [

@@ -22,7 +22,7 @@
         <p>List Classes</p>
     </div>
 <!-- Basic layout-->
-    <g:form url="[action:'addStudent',controller:'addStudent']" class="form-horizontal" style='margin-top: -27px;'>
+    <g:form url="[action:'index',controller:'addTeacher']" class="form-horizontal" style='margin-top: -27px;'>
         <div class="col-md-6">
             <div class="panel panel-flat" >
                 <div class="panel-body">
@@ -30,26 +30,26 @@
 
                         <thead>
                         <tr>
+                            <th>Staff ID</th>
                             <th>FirstName</th>
                             <th>LastName</th>
-                            <th>Gender</th>
-                            <th>Grade</th>
-                            <th>Code</th>
+                            <th>Email</th>
+                            <th>Phone</th>
                             <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
 
-                        <g:if test="${students != null}">
-                            <input type="hidden" name="id"  value="${students.id}"/>
+                        <g:if test="${teacher != null}">
+                            <input type="hidden" name="id"  value="${teacher.id}"/>
                             <div id="towns">
-                                <g:each var="prov" in="${students}">
+                                <g:each var="prov" in="${teacher}">
                                     <tr >
+                                        <td  >${prov.staffId}</td>
                                         <td  >${prov.firstName}</td>
                                         <td  >${prov.lastName}</td>
-                                        <td  >${prov.gender}</td>
-                                        <td  >${prov.grade_id}</td>
-                                        <td  >${prov.class_id}</td>
+                                        <td  >${prov.email}</td>
+                                        <td  >${prov.phone}</td>
                                         <td class="text-center">
                                             <ul class="icons-list">
                                                 <li class="dropdown">
@@ -57,8 +57,8 @@
                                                         <i class="icon-menu9"></i>
                                                     </a>
                                                     <ul class="dropdown-menu dropdown-menu-right">
-                                                        <li><g:link action="deleteProvince" controller="deleteProvince"  params="[id:prov.id]" class="text-center">Delete</g:link></li>
-                                                        <li><g:link action="editProvince" controller="editProvince" params="[id:prov.id]" class="text-center" >Edit</g:link></li>
+                                                        <li><g:link action="index" controller="deleteTeacher"  params="[id:prov.id]" class="text-center">Delete</g:link></li>
+                                                        <li><g:link action="index" controller="updateTeacher" params="[id:prov.id]" class="text-center" >Edit</g:link></li>
 
                                                     </ul>
                                                 </li>
@@ -80,7 +80,7 @@
         <div class="col-md-6">
             <div class="panel panel-flat">
                 <div class="panel-body">
-                    <h5>New Student</h5><hr /><br />
+                    <h5>New Class</h5><hr /><br />
                     <div class="form-group">
                         <label class="col-lg-4 control-label" id="label-1">FirstName:</label>
                         <div class="col-lg-6">
@@ -90,60 +90,30 @@
                     <div class="form-group">
                         <label class="col-lg-4 control-label" id="label-1">LastName:</label>
                         <div class="col-lg-6">
-                            <input type="text" name="lastName" class="form-control" required >
+                            <input type="text" name="lastname" class="form-control">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-lg-4 control-label" id="label-1">OtherNames:</label>
+                        <label class="col-lg-4 control-label" id="label-1">Phone :</label>
                         <div class="col-lg-6">
-                            <input type="text" name="otherNames" class="form-control">
+                            <input type="text" name="phone" class="form-control">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-lg-4 control-label" id="label-1">Gender:</label>
-                        <div class="col-lg-6">
-                            <input type="text" name="gender" class="form-control">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-lg-4 control-label" id="label-1">Grade:</label>
-                        <div class="col-lg-6">
-                            <input type="text" name="grade" class="form-control">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-lg-4 control-label" id="label-1">Class:</label>
-                        <div class="col-lg-6">
-                            <input type="text" name="classId" class="form-control">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-lg-4 control-label" id="label-1">Year Registered:</label>
-                        <div class="col-lg-6">
-                            <input type="text" name="yearRegistered" class="form-control">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-lg-4 control-label" id="label-1">Date of Birth:</label>
-                        <div class="col-lg-6">
-                            <input type="date" name="dob" class="form-control">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-lg-4 control-label" id="label-1">Nationality:</label>
-                        <div class="col-lg-6">
-                            <input type="text" name="nationality" class="form-control">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-lg-4 control-label" id="label-1">Email:</label>
+                        <label class="col-lg-4 control-label" id="label-1">Email :</label>
                         <div class="col-lg-6">
                             <input type="text" name="email" class="form-control">
                         </div>
                     </div>
-                    <div class="form-group">+="label-1">Phone:</label>
+                    <div class="form-group">
+                        <label class="col-lg-4 control-label">Role:</label>
                         <div class="col-lg-6">
-                            <input type="number" name="phone" class="form-control">
+                            <select name="role" class="form-control form-control-sm">
+                                <option selected>--Select Role--</option>
+                                <option value="ROLE_ADMIN">Admin</option>
+                                <option value="ROLE_HEAD">Head Teacher</option>
+                                <option value="ROLE_TEACHER">Teacher</option>
+                            </select>
                         </div>
                     </div>
 

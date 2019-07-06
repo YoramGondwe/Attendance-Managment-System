@@ -6,7 +6,7 @@ class GradeController {
 
     def index() {
         def grade = Grade.findAll()
-        render(view: '', model: [
+        render(view: '/grade/grade', model: [
                 grade:grade
         ])
     }

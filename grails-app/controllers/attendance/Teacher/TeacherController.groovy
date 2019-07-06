@@ -6,6 +6,6 @@ class TeacherController {
 
     def index() {
         def teacher = Teacher.findAll()
-        render(view: '',model: [teacher:teacher])
+        render(view: '/teacher/teacher',model: [teacher:teacher])
     }
 }

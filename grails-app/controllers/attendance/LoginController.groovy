@@ -1,6 +1,10 @@
 package attendance
 
 class LoginController {
+    def springSecurityService
+    def logout() {
 
-    def index() { }
+        session.invalidate()
+        redirect(action: 'auth')
+    }
 }

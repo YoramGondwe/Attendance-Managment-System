@@ -22,7 +22,7 @@
         <p>List Classes</p>
     </div>
 <!-- Basic layout-->
-    <g:form url="[action:'addClass',controller:'addClass']" class="form-horizontal" style='margin-top: -27px;'>
+    <g:form url="[action:'addGrade',controller:'addGrade']" class="form-horizontal" style='margin-top: -27px;'>
         <div class="col-md-6">
             <div class="panel panel-flat" >
                 <div class="panel-body">
@@ -31,21 +31,17 @@
                         <thead>
                         <tr>
                             <th>Grade</th>
-                            <th>Code</th>
-                            <th>Class Teacher</th>
                             <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
 
-                        <g:if test="${classy != null}">
-                            <input type="hidden" name="id"  value="${classy.id}"/>
+                        <g:if test="${grade != null}">
+                            <input type="hidden" name="id"  value="${grade.id}"/>
                             <div id="towns">
-                                <g:each var="prov" in="${classy}">
+                                <g:each var="prov" in="${grade}">
                                     <tr >
-                                        <td  >${prov.grade}</td>
-                                        <td  >${prov.code}</td>
-                                        <td  >${prov.classTeacher}</td>
+                                        <td  >${prov.description}</td>
                                         <td class="text-center">
                                             <ul class="icons-list">
                                                 <li class="dropdown">
@@ -53,8 +49,8 @@
                                                         <i class="icon-menu9"></i>
                                                     </a>
                                                     <ul class="dropdown-menu dropdown-menu-right">
-                                                        <li><g:link action="index" controller="deleteClass"  params="[id:prov.id]" class="text-center">Delete</g:link></li>
-                                                        <li><g:link action="editPage" controller="updateClass" params="[id:prov.id]" class="text-center" >Edit</g:link></li>
+                                                        <li><g:link action="delete" controller="deleteGrade"  params="[id:prov.id]" class="text-center">Delete</g:link></li>
+                                                        <li><g:link action="index" controller="updateGrade" params="[id:prov.id]" class="text-center" >Edit</g:link></li>
 
                                                     </ul>
                                                 </li>
@@ -77,35 +73,11 @@
             <div class="panel panel-flat">
                 <div class="panel-body">
                     <h5>New Class</h5><hr /><br />
-                    <div class="form-group">
-                        <label class="col-lg-4 control-label" id="label-1">Code:</label>
-                        <div class="col-lg-6">
-                            <input type="text" name="code" class="form-control" required >
-                        </div>
-                    </div>
 
                     <div class="form-group">
-                        <label class="col-lg-4 control-label">Grade:</label>
+                        <label class="col-lg-4 control-label" id="label-1">Grade:</label>
                         <div class="col-lg-6">
-                            <select name="grade" class="form-control form-control-sm">
-                                <option selected>--Select Grade--</option>
-                                <g:each var="gad" in="${grades}">
-                                    <option value="${gad.description}">${gad.description}</option>
-                                </g:each>
-
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-lg-4 control-label">Class Teacher:</label>
-                        <div class="col-lg-6">
-                            <select name="teacher" class="form-control form-control-sm">
-                                <option selected>--Select Teacher--</option>
-                                <g:each var="teach" in="${teacher}">
-                                    <option value="${teach.staffId}">${teach.firstName} - ${teach.lastName}</option>
-                                </g:each>
-
-                            </select>
+                            <input type="text" name="grade" class="form-control">
                         </div>
                     </div>
                     <div class="text-right" style="margin-top:5px;margin-bottom:5px;margin-right:20px;">

@@ -7,7 +7,7 @@ class UpdateStudentController {
         def studentId = params?.id
         def student = Student.findByStudentId(studentId)
 
-        render(view: '',model: [student:student])
+        render(view: '/student/editPage',model: [student:student])
     }
 
     def updateStudent() {

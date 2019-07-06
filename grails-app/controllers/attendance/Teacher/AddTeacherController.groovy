@@ -27,21 +27,22 @@ class AddTeacherController {
                 email: email,
         ).save(flush: true)
 
-        def roles = SecRole.findByAuthority('ROLE_USER') ?: new SecRole(authority: 'ROLE_USER').save(failOnError: true)
+        def roles = SecRole.findByAuthority(role) ?: new SecRole(authority: role).save(failOnError: true)
 
-        def school = SecUser.findByUsername(username) ?: new SecUser(
+        def school = SecUser.findByUsername(staffId) ?: new SecUser(
                 username: staffId,
                 password: id,
-
                 enabled: true
         ).save(flush: true, failOnError: true, insert: true)
 
         if (!school.authorities.contains(roles)) {
             new SecUserSecRole(
-                    user: school,
-                    role: roles
+                    secUser: school,
+                    secRole: roles
             ).save(flush: true, failOnError: true)
-            flash.message = "Successfully registered $username"
+
+            flash.message = "Successfully registered $firstName"
+
             redirect(controller: 'teacher',action: 'index')
         }
     }

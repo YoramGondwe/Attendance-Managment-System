@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>
-        FinSight
+        CHS
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <asset:link rel="icon" href="favicon.ico" type="image/x-ico"/>
@@ -266,8 +266,8 @@
                                 <a href="#"><i class="icon-droplet2"></i> <span>Settings</span></a>
                                 <ul>
                                     <li><a href="${createLink(url: '/student/student')}">Students</a></li>
-                                    <li><a href="colors_danger.html">Teachers</a></li>
-                                    <li><a href="colors_success.html">Grades</a></li>
+                                    <li><a href="${createLink(url: '/teacher/teacher')}">Teachers</a></li>
+                                    <li><a href="${createLink(url: '/settings/grade')}">Grades</a></li>
                                     <li><a href="${createLink(url: '/settings/classes')}">Classes</a></li>
 
                                 </ul>
@@ -286,56 +286,7 @@
                                     <li><a href="echarts_combinations.html">Chart combinations</a></li>
                                 </ul>
                             </li>
-                            <li>
-                                <a href="#"><i class="icon-statistics"></i> <span>Accounting</span></a>
-                                <ul>
-                                    <li><a href="d3_lines_basic.html">Simple lines</a></li>
-                                    <li><a href="d3_lines_advanced.html">Advanced lines</a></li>
-                                    <li><a href="d3_bars_basic.html">Simple bars</a></li>
-                                    <li><a href="d3_bars_advanced.html">Advanced bars</a></li>
-                                    <li><a href="d3_pies.html">Pie charts</a></li>
-                                    <li><a href="d3_circle_diagrams.html">Circle diagrams</a></li>
-                                    <li><a href="d3_tree.html">Tree layout</a></li>
-                                    <li><a href="d3_other.html">Other charts</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#"><i class="icon-stats-dots"></i> <span>Reports</span></a>
-                                <ul>
-                                    <li>
-                                        <a href="#">Line charts</a>
-                                        <ul>
-                                            <li><a href="dimple_lines_horizontal.html">Horizontal orientation</a></li>
-                                            <li><a href="dimple_lines_vertical.html">Vertical orientation</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">Bar charts</a>
-                                        <ul>
-                                            <li><a href="dimple_bars_horizontal.html">Horizontal orientation</a></li>
-                                            <li><a href="dimple_bars_vertical.html">Vertical orientation</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">Area charts</a>
-                                        <ul>
-                                            <li><a href="dimple_area_horizontal.html">Horizontal orientation</a></li>
-                                            <li><a href="dimple_area_vertical.html">Vertical orientation</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">Step charts</a>
-                                        <ul>
-                                            <li><a href="dimple_step_horizontal.html">Horizontal orientation</a></li>
-                                            <li><a href="dimple_step_vertical.html">Vertical orientation</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="dimple_pies.html">Pie charts</a></li>
-                                    <li><a href="dimple_rings.html">Ring charts</a></li>
-                                    <li><a href="dimple_scatter.html">Scatter charts</a></li>
-                                    <li><a href="dimple_bubble.html">Bubble charts</a></li>
-                                </ul>
-                            </li>
+
 
 
                         </ul>

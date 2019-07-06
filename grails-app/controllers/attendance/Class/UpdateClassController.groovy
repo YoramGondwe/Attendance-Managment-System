@@ -1,23 +1,30 @@
 package attendance.Class
 
 import SystemDomain.Class
+import SystemDomain.Teacher
 
 class UpdateClassController {
     def editPage(){
         def id = params?.id
+        def teacher = Teacher.findAll()
         def classes = Class.findById(id as Long)
-        render(view: '',model: [classes:classes])
+        render(view: '/classes/editClass',model: [
+                classes:classes,
+                 teacher:teacher
+        ])
     }
 
 
     def updateClass() {
         def id = params?.id
-        def name = params?.name
+        def code = params?.name
         def grade = params?.grade
+        def teacher = params?.teacher
         try{
             def classId = Class.findById(id as Long)
-            classId.setName(name)
+            classId.setCode(code)
             classId.setGrade(grade)
+            classId.setClassTeacher(teacher)
             classId.save(flush:true,failOnError:true)
             flash.message = "Successfully Updated class"
         }catch(Exception e){
