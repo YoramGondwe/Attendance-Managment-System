@@ -13,6 +13,7 @@ class UrlMappings {
         "500"(view: '/error')
         "404"(view: '/notFound')
         '/'(controller: 'home', action: 'index')
+        '/logout'(controller:'login',action:'logout')
 
         group '/settings', {
             '/classes'(controller: 'classes', action: 'index')
@@ -29,6 +30,10 @@ class UrlMappings {
         }
         group '/reports', {
 
+        }
+        group '/attendance', {
+                '/students'(controller:'listStudents',action:'index')
+                '/mark'(controller:'attendance',action:'index')
         }
         group '/student', {
             '/student'(controller: 'student', action: 'index')

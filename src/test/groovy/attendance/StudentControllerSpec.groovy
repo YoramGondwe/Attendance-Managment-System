@@ -1,5 +1,6 @@
 package attendance
 
+import attendance.Student.StudentController
 import grails.testing.web.controllers.ControllerUnitTest
 import spock.lang.Specification
 
