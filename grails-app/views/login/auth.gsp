@@ -13,6 +13,13 @@
         <!-- Main content -->
         <div class="content-wrapper">
             <!-- Form with validation -->
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
             <form action="${postUrl ?: '/login/authenticate'}" method="POST" id="loginForm" class="form-validate">
                 <div class="panel panel-body login-form">
 
@@ -50,9 +57,9 @@
                                 </label>
                             </div>
 
-                            <div class="col-sm-6 text-right">
-                                <a href="/">Forgot password?</a>
-                            </div>
+%{--                            <div class="col-sm-6 text-right">--}%
+%{--                                <a href="/">Forgot password?</a>--}%
+%{--                            </div>--}%
                         </div>
                     </div>
 
@@ -60,9 +67,9 @@
                         <button type="submit" name="login" class="btn bg-blue btn-block">Login <i class="icon-arrow-right14 position-right"></i></button>
                     </div>
 
-                    <div class="content-divider text-muted form-group"><span>Don't have an account?</span></div>
-                    <a href="login_registration.html" class="btn btn-default btn-block content-group">Sign up</a>
-                    <span class="help-block text-center no-margin">By continuing, you're confirming that you've read our <a href="#">Terms &amp; Conditions</a> and <a href="#">Cookie Policy</a></span>
+%{--                    <div class="content-divider text-muted form-group"><span>Don't have an account?</span></div>--}%
+%{--                    <a href="login_registration.html" class="btn btn-default btn-block content-group">Sign up</a>--}%
+%{--                    <span class="help-block text-center no-margin">By continuing, you're confirming that you've read our <a href="#">Terms &amp; Conditions</a> and <a href="#">Cookie Policy</a></span>--}%
 
                 </div>
             </form>

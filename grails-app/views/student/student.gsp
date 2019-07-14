@@ -102,25 +102,40 @@
                     <div class="form-group">
                         <label class="col-lg-4 control-label" id="label-1">Gender:</label>
                         <div class="col-lg-6">
-                            <input type="text" name="gender" class="form-control">
+                            <select name="gender" class="form-control form-control-sm" required>
+                                <option value="M" selected>Male</option>
+                                <option value="F">Female</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-lg-4 control-label" id="label-1">Grade:</label>
                         <div class="col-lg-6">
-                            <input type="text" name="grade" class="form-control">
+                            <select name="grade" class="form-control form-control-sm" required>
+                                <option selected>--Select Grade--</option>
+                                <g:each var="grad" in="${grade}">
+                                    <option value="${grad.description}">${grad.description}</option>
+                                </g:each>
+
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-lg-4 control-label" id="label-1">Class:</label>
                         <div class="col-lg-6">
-                            <input type="text" name="classId" class="form-control">
+                            <select name="classId" class="form-control form-control-sm" required>
+                                <option selected>--Select Class--</option>
+                                <g:each var="clas" in="${classes}">
+                                    <option value="${clas.code}">${clas.code}</option>
+                                </g:each>
+
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-lg-4 control-label" id="label-1">Year Registered:</label>
                         <div class="col-lg-6">
-                            <input type="text" name="yearRegistered" class="form-control">
+                            <input type="number" name="yearRegistered" class="form-control">
                         </div>
                     </div>
                     <div class="form-group">

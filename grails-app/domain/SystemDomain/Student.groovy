@@ -4,7 +4,7 @@ class Student {
     String firstName
     String lastName
     String studentId
-    String yearRegistered
+    Integer yearRegistered
     String dateOfBirth
     String nationality
     String otherNames

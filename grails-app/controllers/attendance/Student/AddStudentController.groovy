@@ -11,7 +11,7 @@ class AddStudentController {
     def addStudent() {
         String firstName = params?.firstName
         String lastName = params?.lastName
-        String yearRegistered = params?.yearRegistered
+        def yearRegistered = params?.yearRegistered
         String dateOfBirth = params?.dob
         String nationality = params?.nationality
         String otherNames = params?.otherNames

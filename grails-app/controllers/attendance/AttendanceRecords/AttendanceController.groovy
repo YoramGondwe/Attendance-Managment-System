@@ -19,8 +19,8 @@ def springSecurityService
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd")
         String today = sdf.format(new Date())
         def teacher = Teacher.findByStaffId(User.username)
-        println "student:$student.studentId"
-        println "Teacher:$User.username"
+//        println "student:$student.studentId"
+//        println "Teacher:$User.username"
         new Attendance(
                 student_id: student.studentId,
                 firstName: student.firstName,

@@ -45,8 +45,8 @@
 <!-- Main navbar -->
 <div class="navbar navbar-inverse bg-indigo">
     <div class="navbar-header">
-        <a class="navbar-brand" href="index.html"><asset:image src="logo_light.png"/></a>
-
+        <a class="navbar-brand" href="${createLink(url: '/')}"><asset:image src="CHS_Logo.jpg" style="width: 50px;height: 59px;margin-top: -21px;" /></a>
+        <h4> <span class="text-semibold">Chudleigh House</span></h4>
         <ul class="nav navbar-nav visible-xs-block">
             <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
             <li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
@@ -59,7 +59,7 @@
 
         </ul>
 
-        <p class="navbar-text"><span class="label bg-success-400">Online</span></p>
+%{--        <p class="navbar-text"><span class="label bg-success-400">Online</span></p>--}%
 
         <ul class="nav navbar-nav navbar-right">
 

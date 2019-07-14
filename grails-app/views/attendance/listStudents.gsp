@@ -42,31 +42,33 @@
                             <div id="students">
                                 <g:each var="prov" in="${students}">
                                     <input type="hidden" name="id" id="id" value="${prov.id}"/>
+
                                     <tr>
+                                        <input type="hidden"  id="student" value="${prov.studentId}"/>
                                         <td  >${prov.firstName}</td>
                                         <td  >${prov.lastName}</td>
                                         <td  >${prov.studentId}</td>
                                         <td class="text-center">
                                             <div class="form-group pt-15">
                                                 <div id="one">
-                                                    <label class="radio-inline">
-                                                        <input id="present"  value="1" type="radio" name="radio-inline-left" class="checkbox" >
-                                                        Present
+                                                    <label  class="radio-inline">
+                                                        <input  id="present" value="1" type="radio" name="radio" class="checkbox" >
+                                                        <p>Present</p>
                                                     </label>
 
                                                     <label class="radio-inline">
-                                                        <input id="absent" type="radio" name="radio-inline-left" class="styled">
+                                                        <input id="absent" type="radio" name="radio" class="styled">
                                                         Absent
                                                     </label>
 
                                                     <label class="radio-inline">
-                                                        <input id="late" type="radio" name="radio-inline-left" class="styled">
+                                                        <input id="late" type="radio" name="radio" class="styled">
                                                         Late
                                                     </label>
 
 
                                                     <label class="radio-inline">
-                                                        <input id="" type="radio" name="radio-inline-left" class="styled">
+                                                        <input id="sick" type="radio" name="radio" class="styled">
                                                         Sick
                                                     </label>
                                                 </div>
@@ -91,30 +93,55 @@
     </g:form>
 <!-- /static mode -->
 </div>
+<asset:javascript src="plugins/notifications/pnotify.min.js"/>
+<asset:javascript  src="pages/components_notifications_pnotify.js"/>
 %{--<asset:javascript src="/plugins/jquery.dataTables.min.js"/>--}%
 %{--<asset:javascript  src="/plugins/dataTables.bootstrap.min.js"/>--}%
 %{--<g:javascript >$('#sampleTable').DataTable();</g:javascript>--}%
 <g:javascript>
     $(document).ready(function () {
-        $("#present").click(function () {
-            var id = $('#id').val();
-            console.log("the one:" + id)
-            var isChecked = !!$('#present').val();
-            if (isChecked) {
-                console.log("we clicked present")
-                $.ajax({
-                    method: 'post',
-                    url: '/attendance/mark',
-                    data: {
-                        id: id,
-                        present: 1
-                    }
 
-                })
+        $("input[name='radio']").change(function () {
+            if (this.checked){
+                var isChecked = !!$('#present').val();
+                // var isAbsent = !!$('#absent').val();
+                // var isSick = !!$('#sick').val();
+                // var isLate = !!$('#late').val();
+                var id = $('#student').val()
+                 if (isChecked) {
+                     new PNotify({
+                         title: 'Attendance Marked',
+                         type: 'success',
+                         text: id + " "+" Marked Present",
+                         desktop: {
+                             desktop: true,
+                             icon: 'assets/images/pnotify/info.png'
+                         }
+                     });
+                 }
+
             }
-
-
-        });
+            $('#present').val(this.checked)
+        })
+        // $("#present").click(function () {
+        //     var id = $('#id').val();
+        //     console.log("the one:" + id)
+        //     var isChecked = !!$('#present').val();
+        //     if (isChecked) {
+        //         console.log("we clicked present")
+        //         $.ajax({
+        //             method: 'post',
+        //             url: '/attendance/mark',
+        //             data: {
+        //                 id: id,
+        //                 present: 1
+        //             }
+        //
+        //         })
+        //     }
+        //
+        //
+        // });
 
 
     });
